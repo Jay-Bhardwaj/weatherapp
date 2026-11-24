@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1635">
+  <title>Atmos — Weather</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css?v=2">
+  <script src="./script.js?v=3" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="weather-card" aria-labelledby="app-title">
+      <header class="app-header">
+        <a class="brand" href="./" aria-label="Atmos home"><span class="brand-mark">☁</span> Atmos</a>
+        <p class="status" aria-live="polite">Live weather</p>
+      </header>
+      <div class="search-wrap">
+        <form class="search" role="search" novalidate>
+          <label class="sr-only" for="city-search">Search for a city</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="city-search" class="search-bar" type="search" placeholder="Search a city…" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false">
+          <button class="search-button" type="submit" aria-label="Search weather">Search</button>
+        </form>
+        <ul class="suggestions" id="suggestions" role="listbox" aria-label="Suggested cities" hidden></ul>
+      </div>
+      <div class="weather loading" aria-live="polite">
+        <div class="location-row"><div><p class="eyebrow">Current weather</p><h1 class="city" id="app-title">Delhi, IN</h1></div><p class="local-time">—</p></div>
+        <div class="hero-weather"><span class="weather-emoji" role="img" aria-label="weather">☀️</span><div><p class="temp">--°</p><p class="description">Loading weather…</p><p class="feels-like">Feels like --°</p></div></div>
+        <div class="metrics" aria-label="Weather details">
+          <div class="metric"><span class="metric-icon">💧</span><span><small>Humidity</small><strong class="humidity">--%</strong></span></div>
+          <div class="metric"><span class="metric-icon">💨</span><span><small>Wind</small><strong class="wind">-- km/h</strong></span></div>
+          <div class="metric"><span class="metric-icon">👁</span><span><small>Visibility</small><strong class="visibility">-- km</strong></span></div>
+        </div>
+      </div>
+      <div class="error" role="alert" hidden></div>
+      <p class="tip">Try “London”, “Tokyo”, or “New York”</p>
+    </section>
+  </main>
+</body>
+</html>
